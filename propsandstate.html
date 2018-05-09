@@ -1,0 +1,52 @@
+1 +<!DOCTYPE html>
+ 2 +<html lang="en">
+ 3 +  <head>
+ 4 +    <title>Welcome to Bloc</title>
+ 5 +  </head>
+ 6 +  <body>
+ 7 +
+ 8 +    <div id="app"></div>
+ 9 +
+10 +    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+11 +    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+12 +    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>>
+13 +
+14 +    <script type="text/babel">
+15 +
+16 +      class Counter extends React.Component {
+17 +        constructor(props){
+18 +     super(props);
+19 +     this.state = {
+20 +       number: 1
+21 +     }
+22 +   }
+23 +        render() {
+24 +          return (
+25 +            <div>
+26 +              <img src={this.props.image} alt="Bloc Logo"/>
+27 +              <h2>Current program: {this.props.label}</h2>
+28 +               <h3>Current week: {this.state.number}</h3>
+29 +              <p>Current Date: {this.props.date.toLocaleDateString()}</p>
+30 +            </div>
+31 +          );
+32 +        }
+33 +      }
+34 +
+35 +      const info = {
+36 +        date: new Date(),
+37 +        image: 'https://avatars0.githubusercontent.com/u/1441485?v=4&s=280',
+38 +      }
+39 +
+40 +      Counter.defaultProps = {
+41 +        label: "Web Developer Track"
+42 +      }
+43 +
+44 +      ReactDOM.render(
+45 +        <Counter
+46 +          date={info.date}
+47 +          image={info.image}/>,document.getElementById('app')
+48 +      );
+49 +
+50 +    </script>
+ </body>
+</html>
